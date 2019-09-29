@@ -32,19 +32,19 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     private final Logger log= Logger.getLogger("UserService");
 
     @Override
-    @CachePut("c1")
+    //@CachePut("c1")
     public User addUser(User user) {
         log.warning("add user :"+user.getUsername());return repository.save(user);
     }
 
     @Override
-    @Cacheable("c1")
+    //@Cacheable("c1")
     public User getUser(Integer id) {
         log.warning("get user by id :"+id);return repository.findById(id).get();
     }
 
     @Override
-    @Cacheable("c1")
+    //@Cacheable("c1")
     public List<User> getAllUser() {
         log.warning("find all user");
         return repository.findAll();
@@ -52,19 +52,19 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
 
     @Override
-    @CachePut("c1")
+    //@CachePut("c1")
     public User updateUser(User user) {
         log.warning("update user  :"+ user.getUsername());return repository.save(user);
     }
 
     @Override
-    @CacheEvict("c1")
+    //@CacheEvict("c1")
     public void deleteUser(User user) {
         log.warning("delete user :"+ user.getUsername());repository.delete(user);
     }
 
     @Override
-    @CacheEvict("c1")
+    //@CacheEvict("c1")
     public void deleteUser(Integer id) {
         log.warning("delete user by id: "+id);repository.deleteById(id);
     }
@@ -85,7 +85,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
 
     @Override
-    @Cacheable("c1")
+    //@Cacheable("c1")
     public User getUser(String username) {
          log.warning("get user by name:"+username);
          User user=repository.getUserByUsername(username);

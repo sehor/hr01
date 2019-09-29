@@ -15,7 +15,7 @@ public class ServiceAop {
 
     private long start=0;
 
-    @Pointcut(value = "execution(* hr01..*Controller.*(..))")  //执行类名以controller结尾的类的所有方法
+    @Pointcut(value = "execution(* hr01..*Service.*(..))")  //执行类名以controller结尾的类的所有方法
     public void getTimeCost(){}
 
     @Before(value = "getTimeCost()")
